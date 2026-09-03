@@ -1,0 +1,266 @@
+:root {
+  /* Paleta temática Lisa Simpson */
+  --bg-dark: #121316;
+  --card-bg: #1e2129;
+  --accent-lisa: #ff5722;       /* Vestido naranja/rojo */
+  --accent-hover: #e64a19;
+  --yellow-simpson: #ffd900;   /* Amarillo Springfield */
+  --pearl-white: #ffffff;      /* Collar de perlas */
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --border-color: #2f3442;
+  
+  /* Burbujas de chat */
+  --chat-bubble-user: #e64a19;
+  --chat-bubble-ai: #282c37;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  background: var(--card-bg);
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--accent-lisa);
+}
+
+.nav-brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  color: var(--yellow-simpson);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--yellow-simpson);
+}
+
+/* Contenedor principal */
+main#app {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  max-width: 850px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Tarjetas (Home & About) */
+.view-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  text-align: center;
+  gap: 1.2rem;
+  padding: 1rem;
+}
+
+.view-container h1 {
+  font-size: 2.2rem;
+  color: var(--yellow-simpson);
+}
+
+.view-container p {
+  color: var(--text-secondary);
+  max-width: 550px;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.85rem 2rem;
+  background: var(--accent-lisa);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(255, 87, 34, 0.35);
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+/* Contenedor del Chat */
+.chat-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 120px);
+  background: var(--card-bg);
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.messages-list {
+  flex: 1;
+  padding: 1.2rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.message {
+  padding: 0.85rem 1.15rem;
+  border-radius: 16px;
+  max-width: 82%;
+  line-height: 1.5;
+  word-break: break-word;
+  font-size: 0.95rem;
+}
+
+/* Mensaje del usuario */
+.message.user {
+  background: var(--chat-bubble-user);
+  color: #ffffff;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+/* Mensaje de Lisa */
+.message.ai {
+  background: var(--chat-bubble-ai);
+  color: var(--text-primary);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  border-left: 3.5px solid var(--yellow-simpson);
+}
+
+/* Hora / Timestamp si lo tienes */
+.message .timestamp {
+  display: block;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 5px;
+  text-align: right;
+}
+
+/* Indicador de tipeo */
+.typing-indicator {
+  font-style: italic;
+  color: var(--yellow-simpson);
+  font-size: 0.85rem;
+  padding: 0.5rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Formulario de entrada */
+.chat-input-form {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.15);
+  border-top: 1px solid var(--border-color);
+}
+
+.chat-input-form input {
+  flex: 1;
+  padding: 0.85rem 1.1rem;
+  background: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 25px;
+  color: var(--text-primary);
+  outline: none;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+}
+
+.chat-input-form input:focus {
+  border-color: var(--yellow-simpson);
+}
+
+.chat-input-form button {
+  padding: 0.85rem 1.5rem;
+  background: var(--accent-lisa);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.chat-input-form button:hover {
+  background: var(--accent-hover);
+}
+
+.chat-input-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive: Mobile First adjustments */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0.8rem 1rem;
+  }
+
+  .nav-brand {
+    font-size: 1rem;
+  }
+
+  .nav-links {
+    gap: 0.8rem;
+  }
+
+  main#app {
+    padding: 0.5rem;
+  }
+
+  .chat-wrapper {
+    height: calc(100vh - 90px);
+    border-radius: 8px;
+  }
+
+  .message {
+    max-width: 90%;
+  }
+
+  .view-container h1 {
+    font-size: 1.75rem;
+  }
+}
