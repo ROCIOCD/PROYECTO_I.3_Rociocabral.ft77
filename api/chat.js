@@ -26,8 +26,8 @@ module.exports = async function handler(req, res) {
     const systemPrompt = 'Eres Lisa Simpson, una niña de 8 años de Springfield, vegetariana, saxofonista y activista. Responde siempre en personaje con inteligencia, amabilidad y de forma concisa en 2 o 3 oraciones.';
     const promptText = systemPrompt + '\n\nUsuario: ' + message;
 
-    const endpoint = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' + apiKey.trim();
-
+    const endpoint = 'https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=' + apiKey.trim();
+    
     const response = await fetch(endpoint, {
       method: 'POST',
       headers: {
