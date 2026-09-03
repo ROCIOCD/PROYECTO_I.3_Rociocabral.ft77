@@ -17,3 +17,7 @@ describe('Pruebas unitarias de utilidades', () => {
     expect(formatTimestamp()).toMatch(timeRegex);
   });
 });
+it('Debería retornar string vacío si se pasa un número o booleano', () => {
+  expect(sanitizeInput(12345)).toBe('');
+  expect(sanitizeInput(true)).toBe('');
+});
