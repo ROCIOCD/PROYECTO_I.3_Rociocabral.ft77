@@ -10,13 +10,12 @@ export default async function handler(req, res) {
 
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
-    return res.status(500).json({ error: 'API Key no configurada en Vercel' });
+    return res.status(500).json({ error: 'API Key no configurada' });
   }
 
-  const systemPrompt = "Eres Lisa Simpson, una niña de 8 años de Springfield, vegetariana, apasionada del saxofón jazz y la justicia social. Responde de forma inteligente, concisa (máximo 2-3 oraciones) y mantente en personaje.";
+  const prompt = Eres Lisa Simpson, la niña de 8 años de Springfield, vegetariana, saxofonista y activista. Responde en personaje de forma concisa (máximo 2 a 3 oraciones).\n\nUsuario: ${message};
 
   try {
-    // Usamos el endpoint estándar v1 con gemini-1.5-flash
     const response = await fetch(
       https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey.trim()},
       {
@@ -26,11 +25,7 @@ export default async function handler(req, res) {
           contents: [
             {
               role: 'user',
-              parts: [
-                {
-                  text: ${systemPrompt}\n\nUsuario dice: ${message}
-                }
-              ]
+              parts: [{ text: prompt }]
             }
           ]
         })
@@ -39,23 +34,20 @@ export default async function handler(req, res) {
 
     const data = await response.json();
 
-    // Si Google devuelve un error (ej. cuota, clave inválida o modelo), lo enviamos al front para diagnosticarlo
     if (!response.ok || data.error) {
-      console.error('Error desde Gemini API:', data);
       return res.status(response.status || 500).json({
-        error: data.error?.message || 'Error en la respuesta de Gemini'
+        error: data.error?.message || 'Error en Gemini API'
       });
     }
 
     const reply =
       data.candidates?.[0]?.content?.parts?.[0]?.text ||
-      '¡Hola! Parece que me distraje pensando en una melodía de jazz. ¿Me repites la pregunta?';
+      '¡Hola! Estaba practicando con mi saxofón. ¿De qué quieres hablar?';
 
     return res.status(200).json({ reply });
   } catch (err) {
-    console.error('Error interno del servidor:', err);
     return res.status(500).json({
-      error: Fallo de conexión: ${err.message}
+      error: 'Error de conexión con el servidor'
     });
   }
 }
