@@ -55,12 +55,14 @@ Control de Versiones & Deploy: Git, GitHub y Vercel.
 ⚙️ Instalación y Ejecución en Entorno Local
 
 1. Clonar el repositorio
+
 Bash
 git clone [https://github.com/ROCIOCD/PROYECTO_I.3_Rociocabral.ft77.git](https://github.com/ROCIOCD/PROYECTO_I.3_Rociocabral.ft77.git)
 cd PROYECTO_I.3_Rociocabral.ft77
 
 
 2. Instalar dependencias
+
 Bash
 npm install
 
@@ -77,6 +79,7 @@ GEMINI_API_KEY=tu_api_key_aqui
 
 
 4. Iniciar el servidor local
+
 Bash
 npx vercel dev
 La aplicación estará disponible de inmediato en: http://localhost:3000
@@ -86,12 +89,17 @@ El proyecto cuenta con pruebas unitarias automatizadas con Vitest que validan el
 
 Bash
 npm test
+
+
+
 🚀 Despliegue en Producción (Vercel)
 El repositorio está vinculado de manera continua a la plataforma Vercel.
 
 La variable GEMINI_API_KEY fue agregada en Settings > Environment Variables en el entorno de producción para proteger la credencial y evitar su exposición en el frontend.
 
 Cada commit a la rama main dispara automáticamente un despliegue optimizado.
+
+
 
 🤖 Registro del Uso de Inteligencia Artificial
 Durante el desarrollo de este proyecto se empleó asistencia de IA (Gemini) como herramienta colaborativa para:
