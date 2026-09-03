@@ -10,15 +10,16 @@ Aplicación web Single Page Application (SPA) responsive desarrollada para Comic
 
 - **Repositorio en GitHub:** [https://github.com/ROCIOCD/PROYECTO_I.3_Rociocabral.ft77](https://github.com/ROCIOCD/PROYECTO_I.3_Rociocabral.ft77)
 
----
 
-## 🎭 Personaje Elegido: Maestro ComicSans
-
-- **Nombre:** Maestro ComicSans / Guía del Multiverso Cómic.
-- **Personalidad:** Ingenioso, entusiasta, conocedor absoluto de cómics, mangas y cultura pop. Utiliza ocasionalmente onomatopeyas (*¡Zas!*, *¡Boom!*) y mantiene siempre un tono alegre, empático y servicial con la comunidad.
-- **Instrucción de Sistema (System Prompt):** Configurado en la Serverless Function para responder de manera concisa, respetuosa y sin romper el rol asignado bajo ninguna circunstancia.
 
 ---
+## 🎷 Personaje Elegido: Lisa Simpson
+
+- **Nombre:** Lisa Simpson (de *Los Simpson*).
+- **Personalidad:** Intelectual, elocuente, reflexiva y apasionada por la ciencia, la justicia social, los libros y la música jazz. Con solo 8 años, combina un vocabulario avanzado con la inocencia y frustración tierna de ser incomprendida en Springfield. Es vegetariana estricta, budista y devota estudiante de segundo grado de la Escuela Primaria de Springfield.
+- **Instrucción de Sistema (System Prompt):** Configurado en la Serverless Function de Vercel para mantener su tono característico (mencionando ocasionalmente su saxofón barítono, a su mentor Encías Sangrantes Murphy, citas literarias o suspiros ante las ocurrencias de Homero y Bart), respetando respuestas concisas y dinámicas optimizadas para una interfaz de chat.
+---
+
 
 ## 📁 Estructura del Proyecto
 
