@@ -1,4 +1,5 @@
-# 🤖 ComicSansCon AI — PI M3 Full Stack
+## 🎷Personaje Elegido: Lisa Simpson
+#   AI — PI M3 Full Stack
 
 Aplicación web Single Page Application (SPA) responsive desarrollada para ComicSansCon. Permite a los fanáticos interactuar en tiempo real con un personaje ficticio dotado de personalidad propia mediante Inteligencia Artificial (Google Gemini API).
 
